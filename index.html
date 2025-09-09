@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Clevent Web NFC Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Clevent Web NFC Clone</h2>
+  <nav>
+    <button onclick="showTab('client')">Client</button>
+    <button onclick="showTab('seller')">Seller</button>
+    <button onclick="showTab('admin')">Admin</button>
+  </nav>
+  <div id="tabs">
+    <section id="client" class="tab">
+      <h3>Client Mode</h3>
+      <button onclick="clientCheck()">Scan Tag</button>
+      <pre id="clientLog"></pre>
+    </section>
+    <section id="seller" class="tab" style="display:none">
+      <h3>Seller Mode</h3>
+      <input id="price" type="number" placeholder="Price" />
+      <button onclick="sellerPurchase()">Process Purchase</button>
+      <pre id="sellerLog"></pre>
+      <div id="sellerQr"></div>
+    </section>
+    <section id="admin" class="tab" style="display:none">
+      <h3>Admin Mode</h3>
+      <input id="initAmount" type="number" placeholder="Init amount" />
+      <button onclick="adminInit()">Initialize Tag</button>
+      <input id="topupAmount" type="number" placeholder="Top-up amount" />
+      <button onclick="adminTopup()">Top-up</button>
+      <pre id="adminLog"></pre>
+    </section>
+  </div>
+  <script src="qrcode.min.js"></script>
+  <script src="crypto.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
